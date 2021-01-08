@@ -1,22 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shop</title>
-</head>
-<body>
-   
-    {%for product in products%}
-    <table>
-        <tr>
-            <td>{{product.name}}</td>
-            <td>:{{product.category.name}}</td>
-            <td>:{{product.price}}</td>
-            <td>:{{product.image}}</td>
-        </tr>
-    </table>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>E-shop</title>
+  </head>
+  <body>
+    
+  <div class="container-fluid">
+    <div class="row mx-auto">
+        {%for product in products%}
+    <div class="card mx-auto mb-3" style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">{{product.name}}</p>
+          <p class="card-text"><b>{{product.price}}</b></p>
+          <a href="#" class="btn btn-light border btn-sm">Add to cart</a>
+        </div>
+      </div>
     {%endfor%}
     
-</body>
+    </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+   
+    
