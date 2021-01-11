@@ -19,3 +19,5 @@ def index(request):
     #print(products)
 
     return render(request,'index.html',data)
+def signup(request):
+    return render(request,'signup.html')
